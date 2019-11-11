@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comment extends Migration
+class CreateTableLoaitin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class Comment extends Migration
      */
     public function up()
     {
-        Schema::create('comment', function (Blueprint $table) {
+        Schema::create('loaitin', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('NoiDung');
-            $table->foreign('idUser')->references('id')->on('users');
-            $table->foreign('idTinTuc')->references('id')->on('tintuc');
+            $table->string('Ten');
+            $table->string('TenKhongDau');
+            $table->bigInteger('idTheLoai')->unsigned();
+            $table->foreign('idTheLoai')->references('id')->on('theloai');      
             $table->timestamps();
         });
-
     }
 
     /**
@@ -30,6 +30,6 @@ class Comment extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('table_loaitin');
     }
 }

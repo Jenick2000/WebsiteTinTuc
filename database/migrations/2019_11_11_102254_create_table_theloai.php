@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Loaitin extends Migration
+class CreateTableTheloai extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Loaitin extends Migration
      */
     public function up()
     {
-        Schema::create('loaitin', function (Blueprint $table) {
+        Schema::create('theloai', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Ten');
             $table->string('TenKhongDau');
-            $table->foreign('idTheLoai')->references('id')->on('theloai');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class Loaitin extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('table_theloai');
     }
 }
