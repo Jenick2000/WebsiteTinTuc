@@ -32,12 +32,21 @@ class usersController extends Controller
             'confirmpassword.same'=> 'confirmPassword không đúng vui lòng nhập lại !'
         ]
         );
+
         $userName = $request->username;
         $email = $request->email;
         $password= bcrypt($request->password);
         $confirmPassword = $request->confirmpassword;
         $usersRights = $request->quyen;
 
+
+         //kiem tra co ton tai nguoi dung khong
+         if(count(User::where('name',$userName)->get()) >0 ){
+            return redirect()->back()->withErrors(['UserName này đã được sử dụng !']);
+        }
+        if(count(User::where('email',$email)->get()) >0){
+            return redirect()->back()->withErrors(['Email này đã được sử dụng !']);
+        }
         $user = new User;
         $user->name = $userName;
         $user->email = $email;
@@ -71,8 +80,15 @@ class usersController extends Controller
         $password= bcrypt($request->password);
         $confirmPassword = $request->confirmpassword;
         $usersRights = $request->quyen;
-
+        
         $user = User::find($id);
+        //kiem tra co ton tai nguoi dung khong
+        if($user->name != $userName && count(User::where('name',$userName)->get()) >0 ){
+            return redirect()->back()->withErrors(['UserName này đã được sử dụng !']);
+        }
+        if($user->name != $userName && count(User::where('email',$email)->get()) >0){
+            return redirect()->back()->withErrors(['Email này đã được sử dụng !']);
+        }
         $user->name = $userName;
         $user->email = $email;
         $user->level = $usersRights;

@@ -104,8 +104,16 @@ class pagesController extends Controller
         $email = $request->email;
         $password= bcrypt($request->password);
         $confirmPassword = $request->confirmpassword;
+         
         if(Auth::check()){
         $user = User::find(Auth::user()->id);
+        //kiem tra co ton tai nguoi dung khong
+        if($user->name != $userName && count(User::where('name',$userName)->get()) >0 ){
+            return redirect()->back()->withErrors(['UserName này đã được sử dụng !']);
+        }
+        if($user->name != $userName && count(User::where('email',$email)->get()) >0){
+            return redirect()->back()->withErrors(['Email này đã được sử dụng !']);
+        }
         $user->name = $userName;
         $user->email = $email;
         
@@ -147,7 +155,14 @@ class pagesController extends Controller
         $email = $request->email;
         $password= bcrypt($request->password);
         $confirmPassword = $request->confirmpassword;
-        
+        //kiem tra co ton tai nguoi dung khong
+        if(count(User::where('name',$userName)->get()) >0 ){
+            return redirect()->back()->withErrors(['UserName này đã được sử dụng !']);
+        }
+        if(count(User::where('email',$email)->get()) >0){
+            return redirect()->back()->withErrors(['Email này đã được sử dụng !']);
+        }
+
         $user = new User;
         $user->name = $userName;
         $user->email = $email;

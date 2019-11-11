@@ -1,4 +1,7 @@
 @extends('layout.index')
+@section('title')
+    Sign Up
+@endsection
 @section('content')
 <div class="card" style="margin:150px">
         <div class="card-header">
