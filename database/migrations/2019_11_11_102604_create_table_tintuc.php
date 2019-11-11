@@ -22,7 +22,7 @@ class CreateTableTintuc extends Migration
             $table->string('Hinh');
             $table->integer('NoiBat');
             $table->integer('SoLuotXem');
-            $table->bigInteger('idLoaitin')->unsigned();
+            $table->bigInteger('idLoaiTin')->unsigned();
             $table->foreign('idLoaiTin')->references('id')->on('loaitin');
             $table->timestamps();
         });
