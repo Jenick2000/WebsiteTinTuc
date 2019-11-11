@@ -16,13 +16,13 @@
         <div class="container">
             <div class="row m-rl--1">
                 <div class="col-md-6 p-rl-1 p-b-2">
-                    @if ($FeaturePost)
+                    @if (!empty($firstFeature))
                     <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url(upload/tintuc/{{$firstFeature['Hinh']}});">
                         <a href="news-detail/{{$firstFeature['id']}}/{{$firstFeature['TieuDeKhongDau']}}.html" class="dis-block how1-child1 trans-03"></a>
 
                         <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                        <a href="type-news/{{$firstFeature['id']}}/{{$firstFeature['TenKhongDau']}}.html" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                    {{--$firstFeature->loaitin->Ten--}}
+                        <a href="type-news/{{$firstFeature->loaitin->id}}/{{$firstFeature->loaitin->TenKhongDau}}.html" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                    {{$firstFeature->loaitin->Ten}}
                             </a>
 
                             <h3 class="how1-child2 m-t-14 m-b-10">
@@ -53,13 +53,13 @@
                 <div class="col-md-6 p-rl-1">
                     <div class="row m-rl--1">
                         <div class="col-12 p-rl-1 p-b-2">
-                            @if ($FeaturePost)
+                            @if (!empty($secondsPost))
                            <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url(upload/tintuc/{{$secondsPost['Hinh']}});">
                             <a href="news-detail/{{$secondsPost['id']}}/{{$secondsPost['TieuDeKhongDau']}}.html" class="dis-block how1-child1 trans-03"></a>
 
                                 <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
-                                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                       {{--$secondsPost->loaitin->Ten--}}
+                                <a href="type-news/{{$secondsPost->loaitin->id}}/{{$secondsPost->loaitin->TenKhongDau}}.html" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                       {{$secondsPost->loaitin->Ten}}
                                     </a>
 
                                     <h3 class="how1-child2 m-t-14">
@@ -77,7 +77,7 @@
                                     <a href="news-detail/{{$item->id}}/{{$item->TieuDeKhongDau}}.html" class="dis-block how1-child1 trans-03"></a>
     
                                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                        <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                    <a href="type-news/{{$item->loaitin->id}}/{{$item->loaitin->TenKhongDau}}.html" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                                            {{$item->loaitin->Ten}}
                                         </a>
     
