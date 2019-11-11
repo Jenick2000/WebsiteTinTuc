@@ -22,7 +22,7 @@
 
                         <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
                         <a href="type-news/{{$firstFeature['id']}}/{{$firstFeature['TenKhongDau']}}.html" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                    {{$firstFeature->loaitin->Ten}}
+                                    {{--$firstFeature->loaitin->Ten--}}
                             </a>
 
                             <h3 class="how1-child2 m-t-14 m-b-10">
@@ -59,7 +59,7 @@
 
                                 <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
                                     <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                       {{$secondsPost->loaitin->Ten}}
+                                       {{--$secondsPost->loaitin->Ten--}}
                                     </a>
 
                                     <h3 class="how1-child2 m-t-14">
