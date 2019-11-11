@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Schema;
+//use Illuminate\Support\Facades\Schema;
 use App\User;
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +31,6 @@ class AppServiceProvider extends ServiceProvider
         //   }else{
         //     View::share('user_login', 'login yet!');
         //   }
-        Schema::defaultStringLength(191); 
+        //Schema::defaultStringLength(191); 
     }
 }

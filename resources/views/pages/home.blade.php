@@ -16,6 +16,7 @@
         <div class="container">
             <div class="row m-rl--1">
                 <div class="col-md-6 p-rl-1 p-b-2">
+                    @if ($FeaturePost)
                     <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url(upload/tintuc/{{$firstFeature['Hinh']}});">
                         <a href="news-detail/{{$firstFeature['id']}}/{{$firstFeature['TieuDeKhongDau']}}.html" class="dis-block how1-child1 trans-03"></a>
 
@@ -45,12 +46,15 @@
                             </span>
                         </div>
                     </div>
+                    @endif
+                    
                 </div>
 
                 <div class="col-md-6 p-rl-1">
                     <div class="row m-rl--1">
                         <div class="col-12 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url(upload/tintuc/{{$secondsPost['Hinh']}});">
+                            @if ($FeaturePost)
+                           <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url(upload/tintuc/{{$secondsPost['Hinh']}});">
                             <a href="news-detail/{{$secondsPost['id']}}/{{$secondsPost['TieuDeKhongDau']}}.html" class="dis-block how1-child1 trans-03"></a>
 
                                 <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
@@ -65,6 +69,7 @@
                                     </h3>
                                 </div>
                             </div>
+                            @endif
                         </div>
                         @foreach ($FeaturePost as $item)
                         <div class="col-sm-6 p-rl-1 p-b-2">
